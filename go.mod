@@ -3,8 +3,10 @@ module github.com/FernandoTorresBautista/go4nlp
 go 1.17
 
 require (
+	github.com/JesusIslam/tldr v0.6.0 // indirect
 	github.com/Obaied/RAKE.Go v0.0.0-20191109090147-068a9e43b194 // indirect
 	github.com/abadojack/whatlanggo v1.0.1 // indirect
+	github.com/alixaxel/pagerank v0.0.0-20160306110729-14bfb4c1d88c // indirect
 	github.com/deckarep/golang-set v1.7.1 // indirect
 	github.com/jdkato/prose v1.2.1 // indirect
 	github.com/jdkato/prose/v2 v2.0.0 // indirect
