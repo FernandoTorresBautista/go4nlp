@@ -7,7 +7,10 @@ require (
 	github.com/Obaied/RAKE.Go v0.0.0-20191109090147-068a9e43b194 // indirect
 	github.com/abadojack/whatlanggo v1.0.1 // indirect
 	github.com/alixaxel/pagerank v0.0.0-20160306110729-14bfb4c1d88c // indirect
+	github.com/cdipaolo/goml v0.0.0-20210723214924-bf439dd662aa // indirect
+	github.com/cdipaolo/sentiment v0.0.0-20200617002423-c697f64e7f10 // indirect
 	github.com/deckarep/golang-set v1.7.1 // indirect
+	github.com/grassmudhorses/vader-go v0.0.0-20191126145716-003d5aacdb71 // indirect
 	github.com/jdkato/prose v1.2.1 // indirect
 	github.com/jdkato/prose/v2 v2.0.0 // indirect
 	github.com/mingrammer/commonregex v1.0.1 // indirect
