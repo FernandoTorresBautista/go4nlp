@@ -26,3 +26,10 @@ Go For Natural Language Proccessing Resource
 + Regex
   + CommonRegex: go get github.com/mingrammer/commonregex
   + Norm: unicode normalization 
+
+
+### GO sentiment analysis excersice with Vader 
++ github.com/grassmudhorses/vader-go
+  + Vader to DO sentiment analysis on already labelled dataset 
++ gopkg.in/kniren/gota.v0/dataframe 
++ gopkg.in/kniren/gota.v0 [all]
