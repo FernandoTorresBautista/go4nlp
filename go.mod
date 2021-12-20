@@ -10,6 +10,7 @@ require (
 	github.com/cdipaolo/goml v0.0.0-20210723214924-bf439dd662aa // indirect
 	github.com/cdipaolo/sentiment v0.0.0-20200617002423-c697f64e7f10 // indirect
 	github.com/deckarep/golang-set v1.7.1 // indirect
+	github.com/go-gota/gota v0.12.0 // indirect
 	github.com/grassmudhorses/vader-go v0.0.0-20191126145716-003d5aacdb71 // indirect
 	github.com/jdkato/prose v1.2.1 // indirect
 	github.com/jdkato/prose/v2 v2.0.0 // indirect
@@ -17,7 +18,9 @@ require (
 	github.com/montanaflynn/stats v0.6.3 // indirect
 	github.com/rylans/getlang v0.0.0-20201227074721-9e7f44ff8aa0 // indirect
 	github.com/shogo82148/go-shuffle v0.0.0-20180218125048-27e6095f230d // indirect
+	golang.org/x/net v0.0.0-20210423184538-5f58ad60dda6 // indirect
 	golang.org/x/text v0.3.7 // indirect
-	gonum.org/v1/gonum v0.7.0 // indirect
+	gonum.org/v1/gonum v0.9.1 // indirect
+	gopkg.in/kniren/gota.v0 v0.10.1 // indirect
 	gopkg.in/neurosnap/sentences.v1 v1.0.6 // indirect
 )
