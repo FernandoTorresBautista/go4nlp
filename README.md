@@ -46,3 +46,10 @@ Go For Natural Language Proccessing Resource
 + dataframes-go 
 + etc 
 
+#### F Structure 
+  ```type F struct {
+		Colidx     int
+    Colname    string
+    Comparator series.Comparator
+    Comparando interface{}
+	}```
