@@ -33,3 +33,16 @@ Go For Natural Language Proccessing Resource
   + Vader to DO sentiment analysis on already labelled dataset 
 + gopkg.in/kniren/gota.v0/dataframe 
 + gopkg.in/kniren/gota.v0 [all]
+
+
+### Go for statictics 
++ math
++ Gonum/stats : gonum.org/v1/gonum/stat
++ Stats: go get github.com/montanaflynn/stats
+
+### Fo for exploratory data analysis 
++ GoTa: go get github.com/kniren/gota/dataframe
++ qframes: github.com/tobgu/qframe
++ dataframes-go 
++ etc 
+
