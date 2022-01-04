@@ -64,3 +64,31 @@ Go For Natural Language Proccessing Resource
 + graph 
 + optimize 
 + Gorgonia
+
+
+### Go for Machine Learning 
++ Data Fetching 
++ Julia/Python
+  +  Data Cleaning, Exploratory Data Analysis, Feature Engineering  
++ Model building, Model Evaluation & Interpretation 
++ GO
+  + Model Monitoring, Model Deployment 
+
+Some libraries 
++ GoLearn
++ GoML
++ GoBrain 
++ GoTorch 
++ Gorgonia
++ etc 
+
+Note: Use prepared data rfom elsewhere 
+
++ github.com/cdipaolo/goml/
+  + base 
+  + cluster 
+  + linear 
+  + perceptron 
+  + text 
+
+
