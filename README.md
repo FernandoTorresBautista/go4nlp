@@ -36,7 +36,7 @@ Go For Natural Language Proccessing Resource
 
 
 ### Go for statictics 
-+ math
++ maths
 + Gonum/stats : gonum.org/v1/gonum/stat
 + Stats: go get github.com/montanaflynn/stats
 
@@ -55,3 +55,12 @@ Go For Natural Language Proccessing Resource
     Comparando interface{}
 	}
   ```
+
+### go for stats 
++ maths
++ gonum 
++ stats
++ plot 
++ graph 
++ optimize 
++ Gorgonia
