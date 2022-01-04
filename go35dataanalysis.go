@@ -18,8 +18,7 @@ type F struct {
 func main() {
 	// DAta Analysis in Go
 	// Open CSV
-	//csvfile, err := os.Open("data/diamonds.csv")
-	csvfile, err := os.Open("data/amazondataset.csv")
+	csvfile, err := os.Open("data/diamonds.csv")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -41,30 +40,29 @@ func main() {
 	// Get Column Names
 	fmt.Println("Names: ", df.Names())
 
-	// // Get DataTypes
-	// fmt.Println("Types: ", df.Types())
+	// Get DataTypes
+	fmt.Println("Types: ", df.Types())
 
-	// // Describe/Summary
-	// fmt.Println("Summary: ", df.Describe())
+	// Describe/Summary
+	fmt.Println("Summary: ", df.Describe())
 
-	// // Selection of Columns & Rows
-	// // Select columns by Column name
-	// fmt.Println("Select column by name: ", df.Select("sentences"))
-	// // Select columns by index
-	// fmt.Println("Select column by index: ", df.Select(0))
+	// Selection of Columns & Rows
+	// Select columns by Column name
+	fmt.Println("Select column by name: ", df.Select("carat"))
+	// Select columns by index
+	fmt.Println("Select column by index: ", df.Select(0))
 
 	// Multiple columns selection
 	// df[["carat", "cut"]] // pandas
 	// []string{"carat", "cut"} // slice / array
-	// fmt.Println(df.Select([]string{"carat", "cut"}))
-	fmt.Println(df.Select([]string{"sentences", "label"}))
+	fmt.Println(df.Select([]string{"carat", "cut"}))
 
 	// Selection of Rows
 	// Subset : iloc
 	fmt.Println(df.Subset(0))
 
 	// Series and Apply functions
-	ds := df.Col("label") // df.Col("carat")
+	ds := df.Col("carat")
 	// fmt.Printf("%T \n", ds)
 	// Apply a function
 	// Get the Mean
@@ -78,9 +76,7 @@ func main() {
 
 	// Apply Conditions
 	// fmt.Println(ds.Select("cut"))
-	// ispremium := df.Filter(dataframe.F{"cut", "==", "1"})
-	// fmt.Println(df.Select("label"))
-	ispremium := df.Filter(dataframe.F{1, "label", "==", "1"})
+	ispremium := df.Filter(dataframe.F{1, "cut", "==", "1"})
 	fmt.Println("Is premium: ", ispremium)
 
 }

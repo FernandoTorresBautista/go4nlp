@@ -47,9 +47,11 @@ Go For Natural Language Proccessing Resource
 + etc 
 
 #### F Structure 
-  ```type F struct {
-		Colidx     int
+  ```
+  type F struct {
+    Colidx     int
     Colname    string
     Comparator series.Comparator
     Comparando interface{}
-	}```
+	}
+  ```
