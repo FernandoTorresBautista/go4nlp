@@ -63,6 +63,16 @@ test = df.drop(train.index)
 print(train.head())
 print(test.head())
 
-train.to_csv("data/trainhcvData.csv", index=False, header=False)
-test.to_csv("data/testhcvData.csv", index=False, header=False)
+train.to_csv("data/prepdata/trainhcvData.csv", index=False, header=False)
+test.to_csv("data/prepdata/testhcvData.csv", index=False, header=False)
 df.to_csv("data/cleanhcvData.csv")
+
+print(test.head())
+
+print(test.iloc[0])
+print(test.iloc[0].tolist())
+
+print(test.head())
+
+print(test.iloc[183])
+print(test.iloc[183].tolist())
