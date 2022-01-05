@@ -71,10 +71,79 @@ func main() {
 	fmt.Println("Round Prediction")
 	fmt.Println(math.Round(mypred2[0]))
 
-	// Save model
-	fmt.Println("Save model")
-	model.PersistToFile("logisticHCVmodel.json")
+	// // Save model
+	// fmt.Println("Save model")
+	// model.PersistToFile("logisticHCVmodel.json")
 
-	// evaluate
+	// Evaluate the model
+	fmt.Println("Evaluate Model")
+	res := evaluatemodel(xtrain, ytrain, s1, ytest)
+	fmt.Printf("%+v \n", res)
 
+}
+
+// confusion matrix struct
+
+type ConfusionMatrix struct {
+	positive      int     `json:"positive"`
+	negative      int     `json:"positive"`
+	truePositive  int     `json:"truePositive"`
+	trueNegative  int     `json:"trueNegative"`
+	falsePositive int     `json:"falsePositive"`
+	falseNegative int     `json:"falseNegative"`
+	acurracy      float64 `json:"acurracy"`
+	precision     float64 `json:"precision"`
+	recall        float64 `json:"recall"`
+}
+
+func evaluatemodel(xtrain [][]float64, ytrain []float64, xTest, yTest []float64) ConfusionMatrix {
+	model := linear.NewLogistic(base.BatchGA, 0.00001, 0, 1000, xtrain, ytrain)
+	err := model.Learn()
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("Finishing Training")
+
+	myprediction, err := model.Predict(xTest)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(myprediction)
+	fmt.Println(math.Round(myprediction[0]))
+	cm := ConfusionMatrix{}
+	for _, y := range yTest {
+		if y == 1.0 {
+			cm.positive++
+		} else if y == 0.0 {
+			cm.negative++
+		}
+	}
+
+	// Evaluate the model
+	var desicionBoundary = 0.5
+	for i := range xTest {
+		prediction, err := model.Predict(xTest)
+		if err != nil {
+			panic(err)
+		}
+		y := int(yTest[i])
+		positive := prediction[0] >= desicionBoundary
+		if y == 1 && positive {
+			cm.truePositive++
+		} else if y == 1 && !positive {
+			cm.falseNegative++
+		} else if y == 0 && positive {
+			cm.falsePositive++
+		} else if y == 0 && !positive {
+			cm.trueNegative++
+		}
+	}
+	fmt.Println("Calculating Confusion Metrics")
+	// Calculate Evaluation Metrics
+	cm.acurracy = (float64(cm.truePositive) + float64(cm.trueNegative)) /
+		(float64(cm.positive) + float64(cm.negative))
+
+	cm.precision = float64(cm.truePositive) / (float64(cm.truePositive) + float64(cm.falsePositive))
+	cm.recall = float64(cm.truePositive) / (float64(cm.truePositive) + float64(cm.falseNegative))
+	return cm
 }
