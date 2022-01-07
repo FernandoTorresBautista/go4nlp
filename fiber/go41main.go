@@ -21,7 +21,20 @@ func main() {
 
 	// route
 	app.Get("/", func(c *fiber.Ctx) error {
-		message := "Hello go fiber"
+		message := "Get - Hello go fiber"
+
+		formName := c.FormValue("name")
+		formMessage := c.FormValue("message")
+		// return c.Render("index")
+		return c.Render("index", fiber.Map{
+			"message":     message,
+			"formname":    formName,
+			"formmessage": formMessage,
+		})
+	})
+
+	app.Post("/", func(c *fiber.Ctx) error {
+		message := "Post - Hello go fiber"
 
 		formName := c.FormValue("name")
 		formMessage := c.FormValue("message")
