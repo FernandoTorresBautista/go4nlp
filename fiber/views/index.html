@@ -15,5 +15,25 @@
     <div>
         {{ .message}}
     </div>
+
+   <form method="GET" action="/">
+       <div>
+           <input type="text" name="name" />
+       </div>
+       <div>
+           <textarea type="text" rows="10" cols="10" name="message">
+           </textarea>
+       </div>
+       <button type="reset" >Reset</button>
+       <button type="submit">Submit</button>
+   </form> 
+
+   <br>
+   <br>
+
+   <div>
+       <p>Form message {{ .formmessage}}</p>
+       <p>Form name {{ .formname}}</p>
+   </div>
 </body>
 </html>
