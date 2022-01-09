@@ -21,6 +21,9 @@ func main() {
 		Views: engine,
 	})
 
+	// serving static files
+	app.Static("/", "./myfiles")
+
 	// route
 	app.Get("/", func(c *fiber.Ctx) error {
 		message := "Get - Hello go fiber"
