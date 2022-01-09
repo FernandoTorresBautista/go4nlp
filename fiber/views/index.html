@@ -17,9 +17,12 @@
         {{ .message}}
     </div>
 
-   <form method="POST" action="/">
+   <form method="POST" action="/" enctype="multipart/form-data">
        <div>
-           <input type="text" name="name" />
+            <input type="text" name="name" />
+       </div>
+       <div>
+            <input type="file" name="filename" accept=".jpg,.jpeg,.png" />
        </div>
        <div>
            <textarea type="text" rows="10" cols="10" name="message">
@@ -35,6 +38,14 @@
    <div>
        <p>Form message {{ .formmessage}}</p>
        <p>Form name {{ .formname}}</p>
+   </div>
+
+   <hr>
+
+   <div>
+       <h4>details: </h4>
+       <p>Uploaded file {{ .SavedFileName }}</p>
+       <p>Uploaded size {{ .SavedFilesize }}</p>
    </div>
 </body>
 </html>

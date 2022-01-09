@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html"
 )
@@ -38,11 +40,25 @@ func main() {
 
 		formName := c.FormValue("name")
 		formMessage := c.FormValue("message")
+
+		// file uploads
+		file, err := c.FormFile("filename")
+		if err != nil {
+			return err
+		}
+		fileName := file.Filename
+		fileSize := file.Size
+
+		//saving file
+		c.SaveFile(file, fmt.Sprintf("./myfiles", fileName))
+
 		// return c.Render("index")
 		return c.Render("index", fiber.Map{
-			"message":     message,
-			"formname":    formName,
-			"formmessage": formMessage,
+			"message":       message,
+			"formname":      formName,
+			"formmessage":   formMessage,
+			"SavedFileName": fileName,
+			"SavedFileSize": fileSize,
 		})
 	})
 
