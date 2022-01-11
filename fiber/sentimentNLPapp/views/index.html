@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <h3>Sentiment Analysis wiht go</h3>
+        <p>{{ .initMessage}}</p>
+        <a href="/">Refresh</a>
+    </div>
+
+    <div>
+        <form action="/" method="POST">
+            <div>
+                <label for="">Message :</label>
+                <textarea type="text" name="message" id="message" placeholder="enter test here">
+                </textarea>
+            </div>
+            <div>
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <hr />
+    <br>
+    <div>
+        <h4>Original message</h4>
+        <p>{{ .originalMsg}}</p>
+    </div>
+    <hr>
+    <div>
+        <h4>Sentiment score</h4>
+        <p>Positive:  {{ .sentimentDetails.Positive}} </p>
+        <p>Negative:  {{ .sentimentDetails.Negative}} </p>
+        <p>Neutral:  {{ .sentimentDetails.Neutral}} </p>
+        <p>Final/Compoind:  {{ .sentimentDetails.Compoind}} </p>
+    </div>
+
+</body>
+</html>
