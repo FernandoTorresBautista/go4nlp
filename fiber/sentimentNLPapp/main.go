@@ -50,6 +50,16 @@ func main() {
 		})
 	})
 
+	// /api/?text=""
+	app.Get("/api/:text?", func(c *fiber.Ctx) error {
+		message := c.Query("text")
+		sentimentResults := analysisSentiment(message)
+		return c.JSON(fiber.Map{
+			"message":   message,
+			"sentiment": sentimentResults,
+		})
+	})
+
 	// Listen
 	app.Listen(":3000")
 }
@@ -67,4 +77,13 @@ func sentimentize(docx string) SentimentDetails {
 		Compound: results.Compound,
 	}
 	return sentimentScore
+}
+
+// Functions for processing
+func analysisSentiment(docx string) float64 {
+	// parse
+	parsedtext := sentitext.Parse(docx, lexicon.DefaultLexicon)
+	// Process
+	results := sentitext.PolarityScore(parsedtext)
+	return results.Compound
 }
